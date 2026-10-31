@@ -166,6 +166,13 @@
                   document.getElementById("planField").value = plans[p]; }
   if (UPLOAD_URL) { var u = document.getElementById("uploadBtn"); u.href = UPLOAD_URL; u.hidden = false;
                     document.getElementById("uploadPending").hidden = true; }
+  if (p === "creator") {   // Creator AI Team setup: no footage needed; kickoff questions + handoff call come by email
+    document.getElementById("upload").innerHTML = '<div class="step"><span class="num">2</span><h2>Your kickoff email</h2></div>' +
+      '<p>Within 1 business day you\'ll get a short kickoff email with 6 questions about your channel and 3 times for your 60-minute handoff call. ' +
+      'Your AI team is delivered within 10 business days of your answers, built in your own Claude account (Claude Pro or Max).</p>';
+    document.getElementById("biz").previousElementSibling.textContent = "Channel or brand name";
+    document.getElementById("offers").previousElementSibling.innerHTML = 'What do you want your AI team to take off your plate? <span class="hint">(planning, scripts, Shorts, captions, replies…)</span>';
+  }
 </script>
 </body>
 </html>
