@@ -5,55 +5,139 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Before and after | Magnificent Media</title>
 <meta name="description" content="Two 25-second before-and-afters: the original clip versus the finished Short, in full-screen and framed styles. Magnificent Media, Wichita, Kansas.">
-<meta property="og:title" content="Before and after: pick your style">
-<meta property="og:description" content="The original clip vs. the finished Short, full-screen or framed. Free sample edit in 24 hours.">
+<meta property="og:title" content="Before and after: choose your style">
+<meta property="og:description" content="The original clip against the finished Short, full-screen or framed. Free sample edit in 24 hours.">
 <meta property="og:image" content="https://magnificentmediaict.com/media/demo-fullscreen-poster.jpg">
 <meta property="og:video" content="https://magnificentmediaict.com/media/demo-fullscreen.mp4">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Cpath d='M24 18v28l22-14z' fill='%23f5b301'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0b0a09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0a09'/%3E%3Cpath d='M14 46V18l18 20 18-20v28' fill='none' stroke='%23c9a96e' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/luxe.css?v=2">
 <style>
-  :root { --ink:#111827; --ink-soft:#4b5563; --gold:#f5b301; --bg-soft:#f8f7f3; }
-  * { box-sizing: border-box; }
-  body { margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:var(--ink); background:var(--bg-soft); line-height:1.6; }
-  .wrap { max-width:900px; margin:0 auto; padding:28px 20px 48px; text-align:center; }
-  .logo { display:inline-flex; align-items:center; gap:10px; font-weight:800; text-decoration:none; color:var(--ink); font-size:18px; letter-spacing:-.02em; margin-bottom:22px; }
-  .logo-mark { width:32px; height:32px; border-radius:8px; background:var(--ink); display:grid; place-items:center; }
-  h1 { font-size:clamp(28px,6vw,40px); letter-spacing:-.03em; line-height:1.15; margin:0 0 10px; }
-  .lead { color:var(--ink-soft); margin:0 auto 28px; max-width:56ch; }
-  .grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-bottom:30px; }
-  .opt h2 { font-size:20px; margin:0 0 4px; }
-  .opt p { color:var(--ink-soft); font-size:15px; margin:0 0 14px; }
-  .tag { display:inline-block; background:var(--gold); color:var(--ink); font-size:12px; font-weight:800; padding:3px 10px; border-radius:999px; letter-spacing:.04em; margin-bottom:8px; }
-  video { width:100%; max-width:360px; aspect-ratio:9/16; border-radius:18px; background:#000; box-shadow:0 20px 50px rgba(17,24,39,.22); display:block; margin:0 auto; }
-  .btn { display:inline-block; text-decoration:none; font-weight:600; padding:14px 24px; border-radius:999px; background:var(--gold); color:var(--ink); }
-  .small { font-size:13px; color:#6b7280; margin-top:22px; }
-  .small a { color:inherit; }
-  @media (max-width:720px) { .grid { grid-template-columns:1fr; gap:40px; } }
+  header { background: rgba(11,10,9,.78); border-bottom-color: var(--line); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .intro { padding: calc(84px + clamp(72px, 10vw, 140px)) 0 clamp(56px, 7vw, 96px); text-align: center; position: relative; }
+  .intro::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 70% at 50% 0%, rgba(201,169,110,.12), transparent 70%); pointer-events: none; }
+  .intro h1 { font-size: clamp(48px, 7vw, 104px); line-height: .98; margin: 26px 0 28px; }
+  .intro .body-lg { margin: 0 auto; }
+  .styles { padding: 0 0 clamp(96px, 12vw, 160px); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+  .plate { padding: clamp(40px, 5vw, 72px) clamp(0px, 4vw, 64px) 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .plate + .plate { border-left: 1px solid var(--line); }
+  .plate .letter { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--gold); }
+  .plate h2 { font-size: clamp(36px, 4vw, 56px); margin: 12px 0 14px; }
+  .plate p { color: var(--ivory-dim); font-size: 15px; max-width: 34ch; margin-bottom: 40px; }
+  .plate .frame { width: min(100%, 340px); margin-top: auto; }
+  .plate .play-row { justify-content: center; }
+  .after-note { text-align: center; padding-top: clamp(64px, 8vw, 110px); }
+  .after-note h2 { font-size: clamp(36px, 4.6vw, 64px); margin: 22px 0 34px; }
+  .after-note .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .disclose { margin-top: 36px; font-size: 12.5px; color: var(--stone); }
+  .disclose a { text-decoration: underline; text-underline-offset: 3px; }
+  @media (max-width: 860px) {
+    .pair { grid-template-columns: 1fr; }
+    .plate + .plate { border-left: 0; border-top: 1px solid var(--line); margin-top: 56px; }
+    .plate { padding-left: 0; padding-right: 0; }
+  }
+  @media (max-width: 560px) { .after-note .btn { width: 100%; } }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <a class="logo" href="/"><span class="logo-mark"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 0v14l12-7z" fill="#f5b301"/></svg></span>Magnificent Media</a>
-    <h1>Same clip. Before and after.</h1>
-    <p class="lead">First, the original clip. Then the finished Short. Pick the style you like. We match the look to your industry, keep text inside each app's safe zones, and size it for Reels, TikTok and Shorts.</p>
-    <div class="grid">
-      <div class="opt">
-        <span class="tag">STYLE A</span>
-        <h2>Full-screen</h2>
-        <p>Your video fills the whole phone screen, with a bold hook and captions.</p>
-        <video src="/media/demo-fullscreen.mp4" poster="/media/demo-fullscreen-poster.jpg" controls playsinline preload="metadata"></video>
+
+<header>
+  <div class="wrap nav">
+    <a class="wordmark" href="/" aria-label="Magnificent Media home">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><rect x=".5" y=".5" width="29" height="29" fill="none" stroke="#c9a96e" stroke-opacity=".55"/><path d="M7 22V8.5l8 9 8-9V22" fill="none" stroke="#e6d1a3" stroke-width="1.2"/></svg>
+      <span>Magnificent Media</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="link" href="/#method">Method</a>
+      <a class="link" href="/#pricing">Pricing</a>
+      <a class="link" href="/#questions">Questions</a>
+      <a class="btn btn-glass" href="mailto:hello@magnificentmediaict.com?subject=Free%20sample%20edit">Free sample</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="intro">
+    <div class="wrap">
+      <span class="label gold"><span class="rule"></span>Before &amp; after</span>
+      <h1>Same clip. <em>Two finishes.</em></h1>
+      <p class="body-lg">Each film opens on the original footage, then cuts to the finished Short. Choose the look you prefer. We match it to your industry, keep every word inside the apps' safe zones and clear of faces, and size it for Reels, TikTok and Shorts.</p>
+    </div>
+  </section>
+
+  <section class="styles">
+    <div class="wrap">
+      <div class="pair">
+        <div class="plate reveal">
+          <span class="letter">Style A</span>
+          <h2>Full-screen</h2>
+          <p>Your footage fills the whole phone screen, with a bold hook and word-by-word captions.</p>
+          <div class="frame tall" id="frameA">
+            <video id="vidA" src="/media/demo-fullscreen.mp4" poster="/media/demo-fullscreen-poster.jpg" playsinline preload="metadata" aria-label="Style A, full-screen before and after"></video>
+          </div>
+          <button class="play-row" type="button" data-video="vidA"><span class="play-btn" aria-hidden="true"></span><span class="play-label">Play style A</span></button>
+        </div>
+        <div class="plate reveal">
+          <span class="letter">Style B</span>
+          <h2>Framed</h2>
+          <p>Your clip sits inside a frame, leaving room for a large title, B-roll and captions.</p>
+          <div class="frame tall" id="frameB">
+            <video id="vidB" src="/media/demo.mp4" poster="/media/demo-poster.jpg" playsinline preload="metadata" aria-label="Style B, framed before and after"></video>
+          </div>
+          <button class="play-row" type="button" data-video="vidB"><span class="play-btn" aria-hidden="true"></span><span class="play-label">Play style B</span></button>
+        </div>
       </div>
-      <div class="opt">
-        <span class="tag">STYLE B</span>
-        <h2>Framed</h2>
-        <p>Your clip sits in a frame with room for a big title, B-roll and captions.</p>
-        <video src="/media/demo.mp4" poster="/media/demo-poster.jpg" controls playsinline preload="metadata"></video>
+
+      <div class="after-note reveal">
+        <span class="label"><span class="rule"></span>Your turn</span>
+        <h2>See it with <em>your own clip.</em></h2>
+        <div class="actions">
+          <a class="btn btn-gold" href="mailto:hello@magnificentmediaict.com?subject=Free%20sample%20edit&amp;body=Hi%2C%20I'd%20like%20a%20free%20sample%20edit.%20My%20business%20is%3A%20%0AStyle%20I%20like%20(A%20full-screen%20or%20B%20framed)%3A%20">Free sample edit <span class="arrow"></span></a>
+          <a class="btn btn-glass" href="/#pricing">View pricing</a>
+        </div>
+        <p class="disclose">Sample footage is from our own channel, The ZINN App. Its presenter is AI-generated.</p>
       </div>
     </div>
-    <a class="btn" href="mailto:hello@magnificentmediaict.com?subject=Free%20sample%20edit&body=Hi%2C%20I'd%20like%20a%20free%20sample%20edit.%20My%20business%20is%3A%20%0AStyle%20I%20like%20(A%20full-screen%20or%20B%20framed)%3A%20">Get a free sample edit of your clip</a>
-    <p class="small">Sample footage is from our own channel, The ZINN App; its presenter is AI-generated. <a href="/#pricing">See pricing</a></p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="stack">
+      <span class="wordmark"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x=".5" y=".5" width="29" height="29" fill="none" stroke="#c9a96e" stroke-opacity=".55"/><path d="M7 22V8.5l8 9 8-9V22" fill="none" stroke="#e6d1a3" stroke-width="1.2"/></svg><span>Magnificent Media</span></span>
+      <span style="margin-top:10px">Short-form video studio · Wichita, Kansas</span>
+    </div>
+    <div class="stack">
+      <a href="mailto:hello@magnificentmediaict.com">hello@magnificentmediaict.com</a>
+      <span>Online only · Replies within one business day</span>
+    </div>
+    <div class="stack">
+      <span class="links"><a href="/#refunds">Refunds</a><a href="/#privacy">Privacy</a><a href="/#terms">Terms</a></span>
+      <span>© 2026 Magnificent Media</span>
+    </div>
   </div>
+</footer>
+
+<script>
+  // Reveal on scroll
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .1 }) : null;
+  document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+
+  // Play controls sit below each film, never over a face; only one film plays at a time
+  const vids = [...document.querySelectorAll('video')];
+  document.querySelectorAll('.play-row').forEach(btn => {
+    const v = document.getElementById(btn.dataset.video), frame = v.parentElement;
+    btn.addEventListener('click', () => { vids.forEach(o => { if (o !== v) o.pause(); }); v.controls = true; v.play(); });
+    v.addEventListener('play', () => frame.classList.add('playing'));
+    v.addEventListener('pause', () => { if (v.currentTime === 0 || v.ended) frame.classList.remove('playing'); });
+    v.addEventListener('ended', () => { frame.classList.remove('playing'); v.controls = false; v.currentTime = 0; });
+  });
+</script>
 </body>
 </html>

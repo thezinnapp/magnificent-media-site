@@ -5,158 +5,269 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Welcome | Magnificent Media</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Cpath d='M24 18v28l22-14z' fill='%23f5b301'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0b0a09">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0a09'/%3E%3Cpath d='M14 46V18l18 20 18-20v28' fill='none' stroke='%23c9a96e' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/luxe.css?v=2">
 <style>
-  :root { --ink:#111827; --ink-soft:#4b5563; --line:#e5e7eb; --gold:#f5b301; --bg-soft:#f8f7f3; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; color:var(--ink); background:var(--bg-soft); line-height:1.6; }
-  .wrap { max-width:720px; margin:0 auto; padding:28px 20px 64px; }
-  .logo { display:inline-flex; align-items:center; gap:10px; font-weight:800; text-decoration:none; color:var(--ink); font-size:18px; letter-spacing:-.02em; }
-  .logo-mark { width:32px; height:32px; border-radius:8px; background:var(--ink); display:grid; place-items:center; }
-  h1 { font-size:clamp(30px,6vw,42px); letter-spacing:-.03em; line-height:1.1; margin:28px 0 10px; }
-  .lead { color:var(--ink-soft); font-size:18px; margin:0 0 28px; }
-  .plan-badge { display:inline-block; background:var(--ink); color:#fff; font-weight:600; font-size:14px; border-radius:999px; padding:6px 14px; margin-bottom:8px; }
-  .card { background:#fff; border:1px solid var(--line); border-radius:18px; padding:26px; margin-bottom:20px; }
-  .step { display:flex; align-items:center; gap:12px; margin:0 0 6px; }
-  .num { width:34px; height:34px; border-radius:50%; background:var(--gold); color:var(--ink); font-weight:800; display:grid; place-items:center; flex:none; }
-  h2 { font-size:22px; margin:0; letter-spacing:-.02em; }
-  .card p, .card li { color:var(--ink-soft); }
-  label { display:block; font-weight:600; font-size:15px; margin:16px 0 6px; }
-  .hint { font-weight:400; color:#6b7280; font-size:13px; }
-  input, textarea, select { width:100%; font:inherit; font-size:16px; padding:12px 14px; border:1px solid #d1d5db; border-radius:10px; background:#fff; color:var(--ink); }
-  textarea { min-height:90px; resize:vertical; }
-  .row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-  .checks { display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:4px; }
-  .checks label { display:flex; align-items:center; gap:8px; font-weight:500; margin:0; }
-  .checks input { width:auto; }
-  .btn { display:inline-block; border:0; cursor:pointer; text-decoration:none; font:inherit; font-weight:600; padding:14px 24px; border-radius:999px; background:var(--gold); color:var(--ink); margin-top:20px; }
-  .btn-dark { background:var(--ink); color:#fff; }
-  .upload-box { text-align:center; padding:8px 0 4px; }
-  .pending { background:#fff7e0; border:1px dashed var(--gold); border-radius:12px; padding:14px; color:var(--ink); font-size:15px; }
-  ul.tight { padding-left:20px; margin:10px 0 0; }
-  ul.tight li { margin:6px 0; }
-  details { border-top:1px solid var(--line); padding:14px 0; }
-  details:first-of-type { border-top:0; }
-  summary { font-weight:600; cursor:pointer; }
-  details p { margin:8px 0 0; }
-  .foot { text-align:center; color:#6b7280; font-size:14px; margin-top:30px; }
-  .foot a { color:inherit; }
-  .hp { position:absolute; left:-9999px; }
-  @media (max-width:600px) { .row { grid-template-columns:1fr; } .card { padding:20px; } }
+  header { background: rgba(11,10,9,.78); border-bottom-color: var(--line); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+  .shell { max-width: 820px; margin: 0 auto; padding: 0 var(--gutter); }
+  .intro { padding: calc(84px + clamp(64px, 9vw, 120px)) 0 clamp(48px, 6vw, 80px); position: relative; }
+  body { background: radial-gradient(ellipse 70% 520px at 30% 0%, rgba(201,169,110,.11), transparent 70%) no-repeat, var(--ink); }
+  .intro h1 { font-size: clamp(50px, 7.4vw, 104px); line-height: .96; margin: 24px 0 28px; }
+  .plan-badge { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 26px; padding: 10px 18px; border: 1px solid rgba(201,169,110,.55); color: var(--gold-hi); font-size: 11px; letter-spacing: .26em; text-transform: uppercase; background: linear-gradient(180deg, rgba(201,169,110,.10), rgba(201,169,110,.02)); }
+  .plan-badge::before { content: ""; width: 6px; height: 6px; transform: rotate(45deg); background: var(--gold); }
+  .plan-badge[hidden] { display: none; }
+
+  .chapter { padding: clamp(56px, 7vw, 88px) 0; border-top: 1px solid var(--line); }
+  .chapter-head { display: flex; align-items: baseline; gap: 22px; margin-bottom: 14px; }
+  .chapter-head .num { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--gold); flex: none; }
+  .chapter-head h2 { font-size: clamp(32px, 3.8vw, 48px); line-height: 1.05; }
+  .chapter-head .time { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--stone); white-space: nowrap; }
+  .chapter-body { padding-left: 50px; }
+  .chapter-body > p { color: var(--ivory-dim); max-width: 60ch; }
+
+  /* Form */
+  form { margin-top: 26px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; }
+  .field { margin-bottom: 26px; }
+  label { display: block; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--ivory-dim); margin-bottom: 10px; }
+  .hint { text-transform: none; letter-spacing: .01em; color: var(--stone); font-size: 12.5px; }
+  .hint a { color: var(--gold-hi); text-decoration: underline; text-underline-offset: 3px; }
+  input[type=text], input[type=email], input[type=tel], input:not([type]), textarea, select {
+    width: 100%; font: 300 16px/1.5 var(--sans); color: var(--ivory);
+    padding: 14px 16px; border-radius: 2px; border: 1px solid var(--line-strong);
+    background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.45);
+    transition: border-color .25s, box-shadow .25s, background .25s;
+    -webkit-appearance: none; appearance: none;
+  }
+  input::placeholder, textarea::placeholder { color: rgba(185,177,165,.45); }
+  input:hover, textarea:hover, select:hover { border-color: rgba(237,231,221,.32); }
+  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--gold); background: rgba(201,169,110,.05); box-shadow: inset 0 1px 3px rgba(0,0,0,.45), 0 0 0 3px rgba(201,169,110,.14); }
+  textarea { min-height: 112px; resize: vertical; }
+  select {
+    cursor: pointer; padding-right: 44px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23c9a96e' stroke-width='1.2'/%3E%3C/svg%3E"), linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.015));
+    background-repeat: no-repeat; background-position: right 16px center, 0 0;
+  }
+  select option { background: var(--ink-2); color: var(--ivory); }
+  .checks { display: flex; flex-wrap: wrap; gap: 12px; }
+  .check { position: relative; }
+  .check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .check span {
+    display: inline-flex; align-items: center; gap: 12px; padding: 12px 18px; cursor: pointer; user-select: none;
+    border: 1px solid var(--line-strong); font-size: 14px; color: var(--ivory-dim);
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 6px 16px -10px rgba(0,0,0,.8);
+    transition: border-color .2s, color .2s, background .2s, transform .15s;
+  }
+  .check span::before { content: ""; width: 14px; height: 14px; flex: none; border: 1px solid rgba(237,231,221,.4); transition: background .2s, border-color .2s; }
+  .check:hover span { border-color: rgba(201,169,110,.5); }
+  .check input:checked + span { color: var(--ivory); border-color: var(--gold); background: rgba(201,169,110,.10); }
+  .check input:checked + span::before { border-color: var(--gold); background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.6 2.6L9 1' fill='none' stroke='%230b0a09' stroke-width='1.6'/%3E%3C/svg%3E") center no-repeat; }
+  .check input:focus-visible + span { outline: 1px solid var(--gold-hi); outline-offset: 3px; }
+  .check span:active { transform: translateY(1px); }
+  .submit-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
+  .submit-row .hint { max-width: 36ch; }
+  button.btn { font-family: var(--sans); }
+  .hp { position: absolute; left: -9999px; }
+
+  /* Upload + lists */
+  .upload-box { margin: 26px 0 30px; }
+  .pending { border: 1px dashed rgba(201,169,110,.5); padding: 16px 18px; color: var(--ivory-dim); font-size: 14.5px; }
+  .pending[hidden], .btn[hidden] { display: none; }
+  ul.notes { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  ul.notes li { position: relative; padding: 16px 0 16px 22px; border-bottom: 1px solid var(--line); color: var(--ivory-dim); font-size: 15px; }
+  ul.notes li::before { content: ""; position: absolute; left: 1px; top: 26px; width: 5px; height: 5px; transform: rotate(45deg); background: var(--gold); }
+  ul.notes strong { color: var(--ivory); font-weight: 500; }
+
+  .faq-wrap { margin-top: 10px; }
+  details p a { text-decoration: underline; text-underline-offset: 3px; }
+  .questions { padding: clamp(56px, 7vw, 88px) 0 clamp(80px, 10vw, 130px); border-top: 1px solid var(--line); }
+  .questions h2 { font-size: clamp(32px, 3.8vw, 48px); margin: 22px 0 30px; }
+  .closing-line { margin-top: 44px; color: var(--stone); font-size: 14px; }
+  .closing-line a { color: var(--gold-hi); }
+
+  @media (max-width: 640px) {
+    .row { grid-template-columns: 1fr; }
+    .chapter-body { padding-left: 0; }
+    .chapter-head { flex-wrap: wrap; gap: 6px 18px; }
+    .chapter-head .time { flex-basis: 100%; }
+    .submit-row .btn { width: 100%; }
+    .upload-box .btn { width: 100%; }
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <a class="logo" href="/"><span class="logo-mark"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2 0v14l12-7z" fill="#f5b301"/></svg></span>Magnificent Media</a>
 
-  <h1>Welcome. You're in.</h1>
-  <div class="plan-badge" id="planBadge" hidden></div>
-  <p class="lead">Thank you for your purchase. Your receipt is on its way to your email. Two quick steps and we'll start on your videos.</p>
+<header>
+  <div class="wrap nav">
+    <a class="wordmark" href="/" aria-label="Magnificent Media home">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><rect x=".5" y=".5" width="29" height="29" fill="none" stroke="#c9a96e" stroke-opacity=".55"/><path d="M7 22V8.5l8 9 8-9V22" fill="none" stroke="#e6d1a3" stroke-width="1.2"/></svg>
+      <span>Magnificent Media</span>
+    </a>
+    <nav class="nav-links" aria-label="Steps">
+      <a class="link" href="#intake">Details</a>
+      <a class="link" href="#upload">Clips</a>
+      <a class="link" href="#faq">Questions</a>
+    </nav>
+  </div>
+</header>
+
+<main class="shell">
+  <section class="intro">
+    <span class="label gold"><span class="rule"></span>Welcome</span>
+    <h1>You're in. <em>Thank you.</em></h1>
+    <div class="plan-badge" id="planBadge" hidden></div>
+    <p class="body-lg">Your receipt is on its way to your email. Two quick steps, and we begin on your videos.</p>
+  </section>
 
   <!-- STEP 1: intake -->
-  <div class="card" id="intake">
-    <div class="step"><span class="num">1</span><h2>Tell us about your business <span class="hint">(about 2 minutes)</span></h2></div>
-    <form action="https://formsubmit.co/hello@magnificentmediaict.com" method="POST" id="intakeForm">
-      <input type="hidden" name="_subject" value="New client intake">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://magnificentmediaict.com/welcome/thanks/">
-      <input type="hidden" name="plan" id="planField" value="">
-      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+  <section class="chapter" id="intake">
+    <div class="chapter-head"><span class="num">i.</span><h2>Tell us about your business</h2><span class="time">About 2 minutes</span></div>
+    <div class="chapter-body">
+      <form action="https://formsubmit.co/hello@magnificentmediaict.com" method="POST" id="intakeForm">
+        <input type="hidden" name="_subject" value="New client intake">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://magnificentmediaict.com/welcome/thanks/">
+        <input type="hidden" name="plan" id="planField" value="">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
 
-      <div class="row">
-        <div><label for="biz">Business name</label><input id="biz" name="business_name" required></div>
-        <div><label for="contact">Your name</label><input id="contact" name="contact_name" required></div>
-      </div>
-      <div class="row">
-        <div><label for="email">Email <span class="hint">(where we send your videos)</span></label><input id="email" type="email" name="email" required></div>
-        <div><label for="phone">Mobile number</label><input id="phone" type="tel" name="phone" required></div>
-      </div>
-      <label for="links">Instagram, Facebook, TikTok or website links</label>
-      <textarea id="links" name="social_links" placeholder="@yourbusiness, facebook.com/yourbusiness, yoursite.com"></textarea>
+        <div class="row">
+          <div class="field"><label for="biz">Business name</label><input id="biz" name="business_name" required autocomplete="organization"></div>
+          <div class="field"><label for="contact">Your name</label><input id="contact" name="contact_name" required autocomplete="name"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="email">Email <span class="hint">(where we send your videos)</span></label><input id="email" type="email" name="email" required autocomplete="email"></div>
+          <div class="field"><label for="phone">Mobile number</label><input id="phone" type="tel" name="phone" required autocomplete="tel"></div>
+        </div>
+        <div class="field">
+          <label for="links">Instagram, Facebook, TikTok or website links</label>
+          <textarea id="links" name="social_links" placeholder="@yourbusiness, facebook.com/yourbusiness, yoursite.com"></textarea>
+        </div>
 
-      <label>Where will you post? <span class="hint">(pick all)</span></label>
-      <div class="checks">
-        <label><input type="checkbox" name="platforms" value="Instagram Reels"> Instagram Reels</label>
-        <label><input type="checkbox" name="platforms" value="TikTok"> TikTok</label>
-        <label><input type="checkbox" name="platforms" value="YouTube Shorts"> YouTube Shorts</label>
-        <label><input type="checkbox" name="platforms" value="Facebook"> Facebook</label>
-      </div>
+        <div class="field">
+          <label>Where will you post? <span class="hint">(pick all)</span></label>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="platforms" value="Instagram Reels"><span>Instagram Reels</span></label>
+            <label class="check"><input type="checkbox" name="platforms" value="TikTok"><span>TikTok</span></label>
+            <label class="check"><input type="checkbox" name="platforms" value="YouTube Shorts"><span>YouTube Shorts</span></label>
+            <label class="check"><input type="checkbox" name="platforms" value="Facebook"><span>Facebook</span></label>
+          </div>
+        </div>
 
-      <label for="goal">What do you want more of?</label>
-      <select id="goal" name="main_goal">
-        <option>Bookings / appointments</option><option>Phone calls</option><option>Walk-ins</option>
-        <option>Online sales</option><option>Followers / awareness</option><option>Something else</option>
-      </select>
+        <div class="field">
+          <label for="goal">What do you want more of?</label>
+          <select id="goal" name="main_goal">
+            <option>Bookings / appointments</option><option>Phone calls</option><option>Walk-ins</option>
+            <option>Online sales</option><option>Followers / awareness</option><option>Something else</option>
+          </select>
+        </div>
 
-      <label for="offers">What should the videos promote? <span class="hint">(services, specials, what makes you different)</span></label>
-      <textarea id="offers" name="offers_to_promote" required></textarea>
+        <div class="field">
+          <label for="offers">What should the videos promote? <span class="hint">(services, specials, what makes you different)</span></label>
+          <textarea id="offers" name="offers_to_promote" required></textarea>
+        </div>
 
-      <div class="row">
-        <div><label for="colors">Brand colors <span class="hint">(optional)</span></label><input id="colors" name="brand_colors" placeholder="e.g. gold and black, or #F5B301"></div>
-        <div><label for="tone">Tone</label>
-          <select id="tone" name="tone"><option>Friendly and upbeat</option><option>Calm and professional</option><option>Bold and energetic</option><option>Luxury</option><option>Funny</option></select></div>
-      </div>
-      <label for="layout">Video style <span class="hint">(<a href="/demo/" target="_blank" rel="noopener">see both</a>)</span></label>
-      <select id="layout" name="video_style"><option>Let you choose for my industry</option><option>Style A: Full-screen</option><option>Style B: Framed</option><option>A mix of both</option></select>
+        <div class="row">
+          <div class="field"><label for="colors">Brand colors <span class="hint">(optional)</span></label><input id="colors" name="brand_colors" placeholder="e.g. gold and black, or #C9A96E"></div>
+          <div class="field"><label for="tone">Tone</label>
+            <select id="tone" name="tone"><option>Friendly and upbeat</option><option>Calm and professional</option><option>Bold and energetic</option><option>Luxury</option><option>Funny</option></select></div>
+        </div>
+        <div class="field">
+          <label for="layout">Video style <span class="hint">(<a href="/demo/" target="_blank" rel="noopener">see both</a>)</span></label>
+          <select id="layout" name="video_style"><option>Let you choose for my industry</option><option>Style A: Full-screen</option><option>Style B: Framed</option><option>A mix of both</option></select>
+        </div>
 
-      <label for="avoid">Anything we should never say or show? <span class="hint">(optional)</span></label>
-      <textarea id="avoid" name="do_not_show"></textarea>
-      <label for="cta">How should viewers contact you? <span class="hint">(this goes in captions)</span></label>
-      <input id="cta" name="call_to_action" placeholder="Book at yoursite.com / Call (316) 555-0100 / DM us">
+        <div class="field">
+          <label for="avoid">Anything we should never say or show? <span class="hint">(optional)</span></label>
+          <textarea id="avoid" name="do_not_show"></textarea>
+        </div>
+        <div class="field">
+          <label for="cta">How should viewers contact you? <span class="hint">(this goes in captions)</span></label>
+          <input id="cta" name="call_to_action" placeholder="Book at yoursite.com / Call (316) 555-0100 / DM us">
+        </div>
 
-      <button class="btn" type="submit">Send my details</button>
-      <p class="hint" style="margin-top:12px">Your details are used only to make your videos. See our <a href="/#privacy">privacy policy</a>.</p>
-    </form>
-  </div>
+        <div class="submit-row">
+          <button class="btn btn-gold" type="submit">Send my details <span class="arrow"></span></button>
+          <p class="hint">Your details are used only to make your videos. See our <a href="/#privacy">privacy policy</a>.</p>
+        </div>
+      </form>
+    </div>
+  </section>
 
   <!-- STEP 2: upload -->
-  <div class="card" id="upload">
-    <div class="step"><span class="num">2</span><h2>Send us your clips</h2></div>
-    <div class="upload-box">
-      <a class="btn btn-dark" id="uploadBtn" href="#" target="_blank" rel="noopener" hidden>Upload your videos</a>
-      <div class="pending" id="uploadPending">Your private upload link is on its way by email within 1 business day.</div>
+  <section class="chapter" id="upload">
+    <div class="chapter-head"><span class="num">ii.</span><h2>Send us your clips</h2></div>
+    <div class="chapter-body">
+      <div class="upload-box">
+        <a class="btn btn-gold" id="uploadBtn" href="#" target="_blank" rel="noopener" hidden>Upload your videos <span class="arrow"></span></a>
+        <div class="pending" id="uploadPending">Your private upload link is on its way by email within 1 business day.</div>
+      </div>
+      <ul class="notes">
+        <li><strong>Upload the original files</strong> from your phone or computer. Please don't text or email videos, because that shrinks the quality.</li>
+        <li><strong>Any format is fine:</strong> iPhone or Android, vertical or horizontal, HDR, any length. We handle the conversion.</li>
+        <li><strong>No size worries:</strong> large files are welcome. On a phone, keep the page open until the upload finishes, and use Wi-Fi for big batches.</li>
+        <li>When the upload page asks for your name, type your <strong>business name</strong>, so your clips land in your folder.</li>
+        <li>Aim for <strong>10 to 20 clips</strong> to start. Don't have many? We'll email you a ten-minute shot list.</li>
+      </ul>
     </div>
-    <ul class="tight">
-      <li><strong>Upload the original files</strong> from your phone or computer. Please don't text or email videos, because that shrinks the quality.</li>
-      <li><strong>Any format is fine:</strong> iPhone or Android, vertical or horizontal, HDR, any length. We handle the conversion.</li>
-      <li><strong>No size worries:</strong> large files are OK. On a phone, keep the page open until the upload finishes, and use Wi-Fi for big batches.</li>
-      <li>When the upload page asks for your name, type your <strong>business name</strong>, so your clips land in your folder.</li>
-      <li>Aim for <strong>10 to 20 clips</strong> to start. Don't have many? We'll email you a 10-minute shot list.</li>
-    </ul>
-  </div>
+  </section>
 
   <!-- STEP 3: what happens next -->
-  <div class="card">
-    <div class="step"><span class="num">3</span><h2>What happens next</h2></div>
-    <ul class="tight">
-      <li>We confirm we've received your clips, usually within 1 business day.</li>
-      <li>Your first batch is ready <strong>within 5 business days</strong> of receiving your footage.</li>
-      <li>We email you a link to a private folder with your finished videos, plus a caption and hashtags for each and a suggested posting schedule.</li>
-      <li>Want a change? Reply to that email. Each video includes one round of revisions.</li>
-    </ul>
-  </div>
+  <section class="chapter">
+    <div class="chapter-head"><span class="num">iii.</span><h2>What happens next</h2></div>
+    <div class="chapter-body">
+      <ul class="notes">
+        <li>We confirm we've received your clips, usually within 1 business day.</li>
+        <li>Your first batch is ready <strong>within 5 business days</strong> of receiving your footage.</li>
+        <li>We email you a link to a private folder with your finished videos, plus a caption and hashtags for each and a suggested posting schedule.</li>
+        <li>Want a change? Reply to that email. Each video includes one round of revisions.</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- FAQ -->
-  <div class="card" id="faq">
-    <h2 style="margin-bottom:8px">Common questions</h2>
-    <details><summary>What should I film?</summary><p>Your work in action, before and after results, your team, quick tips for customers, a short tour, a customer saying something nice (with their permission). Short clips of 10 to 60 seconds are perfect. Talking to the camera works great; we add the captions.</p></details>
-    <details><summary>Vertical or horizontal?</summary><p>Vertical is best, but horizontal works too. We fit it to Reels, TikTok and Shorts without cutting off what matters.</p></details>
-    <details><summary>Do I need good lighting or a fancy camera?</summary><p>No. A phone is enough. Face a window for nice light and get close for clear sound. We fix levels, cut the dead air and add captions.</p></details>
-    <details><summary>How big can files be?</summary><p>Large files are fine. Upload the originals. If an upload stops, open the link again and re-send that clip.</p></details>
-    <details><summary>Can I send old videos or photos?</summary><p>Yes. Old videos are great material. Photos can be used as quick slides inside a video.</p></details>
-    <details><summary>Do you post the videos for me?</summary><p>We deliver finished videos with captions, hashtags and a posting schedule so you can post in seconds. Growth plans include versions tuned for each platform.</p></details>
-    <details><summary>Can I use music?</summary><p>Add a trending sound from the app's own music library when you post. That's licensed for you by the platform. We keep the voice clear so any sound fits underneath.</p></details>
-    <details><summary>How do revisions work?</summary><p>Reply to the delivery email with the video number and what to change. Each video includes one round of revisions.</p></details>
-    <details><summary>How do I cancel or change plans?</summary><p>Email us before your next billing date and you won't be charged again. The Founding 90-day plan is a prepaid, non-refundable rate. See the <a href="/#refunds">refund policy</a>.</p></details>
-    <details><summary>Who owns the videos?</summary><p>You do. We never post or share your footage anywhere without your written permission.</p></details>
-  </div>
+  <section class="questions" id="faq">
+    <span class="label"><span class="rule"></span>Common questions</span>
+    <h2>Before you <em>begin.</em></h2>
+    <div class="faq-wrap">
+      <details><summary>What should I film?<span class="pm"></span></summary><p>Your work in action, before and after results, your team, quick tips for customers, a short tour, a customer saying something kind (with their permission). Clips of 10 to 60 seconds are perfect. Talking to the camera works well; we add the captions.</p></details>
+      <details><summary>Vertical or horizontal?<span class="pm"></span></summary><p>Vertical is best, but horizontal works too. We fit it to Reels, TikTok and Shorts without cutting off what matters.</p></details>
+      <details><summary>Do I need good lighting or a fancy camera?<span class="pm"></span></summary><p>No. A phone is enough. Face a window for soft light and get close for clear sound. We fix levels, cut the dead air and add captions.</p></details>
+      <details><summary>How big can files be?<span class="pm"></span></summary><p>Large files are fine. Upload the originals. If an upload stops, open the link again and re-send that clip.</p></details>
+      <details><summary>Can I send old videos or photos?<span class="pm"></span></summary><p>Yes. Old videos are great material. Photos can be used as quick slides inside a video.</p></details>
+      <details><summary>Do you post the videos for me?<span class="pm"></span></summary><p>We deliver finished videos with captions, hashtags and a posting schedule so you can post in seconds. Growth plans include versions tuned for each platform.</p></details>
+      <details><summary>Can I use music?<span class="pm"></span></summary><p>Add a trending sound from the app's own music library when you post. That's licensed for you by the platform. We keep the voice clear so any sound fits underneath.</p></details>
+      <details><summary>How do revisions work?<span class="pm"></span></summary><p>Reply to the delivery email with the video number and what to change. Each video includes one round of revisions.</p></details>
+      <details><summary>How do I cancel or change plans?<span class="pm"></span></summary><p>Email us before your next billing date and you won't be charged again. The Founding 90-day plan is a prepaid, non-refundable rate. See the <a href="/#refunds">refund policy</a>.</p></details>
+      <details><summary>Who owns the videos?<span class="pm"></span></summary><p>You do. We never post or share your footage anywhere without your written permission.</p></details>
+    </div>
+    <p class="closing-line">Questions anytime: <a href="mailto:hello@magnificentmediaict.com">hello@magnificentmediaict.com</a></p>
+  </section>
+</main>
 
-  <p class="foot">Questions anytime: <a href="mailto:hello@magnificentmediaict.com">hello@magnificentmediaict.com</a></p>
-</div>
+<footer>
+  <div class="wrap foot">
+    <div class="stack">
+      <span class="wordmark"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x=".5" y=".5" width="29" height="29" fill="none" stroke="#c9a96e" stroke-opacity=".55"/><path d="M7 22V8.5l8 9 8-9V22" fill="none" stroke="#e6d1a3" stroke-width="1.2"/></svg><span>Magnificent Media</span></span>
+      <span style="margin-top:10px">Short-form video studio · Wichita, Kansas</span>
+    </div>
+    <div class="stack">
+      <a href="mailto:hello@magnificentmediaict.com">hello@magnificentmediaict.com</a>
+      <span>Online only · Replies within one business day</span>
+    </div>
+    <div class="stack">
+      <span class="links"><a href="/#refunds">Refunds</a><a href="/#privacy">Privacy</a><a href="/#terms">Terms</a></span>
+      <span>© 2026 Magnificent Media</span>
+    </div>
+  </div>
+</footer>
+
 <script>
   var UPLOAD_URL = "https://www.dropbox.com/request/551onp2gib8s29ujhgx6";  // Dropbox file request "Magnificent Media uploads"
   var plans = { starter: "Starter plan: 8 videos a month", growth: "Growth plan: 12 videos a month",
@@ -167,9 +278,9 @@
   if (UPLOAD_URL) { var u = document.getElementById("uploadBtn"); u.href = UPLOAD_URL; u.hidden = false;
                     document.getElementById("uploadPending").hidden = true; }
   if (p === "creator") {   // Creator AI Team setup: no footage needed; kickoff questions + handoff call come by email
-    document.getElementById("upload").innerHTML = '<div class="step"><span class="num">2</span><h2>Your kickoff email</h2></div>' +
-      '<p>Within 1 business day you\'ll get a short kickoff email with 6 questions about your channel and 3 times for your 60-minute handoff call. ' +
-      'Your AI team is delivered within 10 business days of your answers, built in your own Claude account (Claude Pro or Max).</p>';
+    document.getElementById("upload").innerHTML = '<div class="chapter-head"><span class="num">ii.</span><h2>Your kickoff email</h2></div>' +
+      '<div class="chapter-body"><p>Within 1 business day you\'ll get a short kickoff email with 6 questions about your channel and 3 times for your 60-minute handoff call. ' +
+      'Your AI team is delivered within 10 business days of your answers, built in your own Claude account (Claude Pro or Max).</p></div>';
     document.getElementById("biz").previousElementSibling.textContent = "Channel or brand name";
     document.getElementById("offers").previousElementSibling.innerHTML = 'What do you want your AI team to take off your plate? <span class="hint">(planning, scripts, Shorts, captions, replies…)</span>';
   }
