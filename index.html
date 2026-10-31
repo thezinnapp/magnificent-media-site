@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magnificent Media | Short-form video for Wichita businesses</title>
+<meta name="description" content="Magnificent Media turns the clips on your phone into captioned Reels, TikToks and Shorts every month. Done-for-you short-form video editing for local businesses in Wichita, Kansas.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Cpath d='M24 18v28l22-14z' fill='%23f5b301'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #111827;
+    --ink-soft: #4b5563;
+    --line: #e5e7eb;
+    --bg: #ffffff;
+    --bg-soft: #f8f7f3;
+    --gold: #f5b301;
+    --gold-dark: #b98500;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+
+  /* Header */
+  header {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.02em; text-decoration: none; font-size: 18px; }
+  .logo-mark { width: 32px; height: 32px; border-radius: 8px; background: var(--ink); display: grid; place-items: center; }
+  .logo-mark svg { width: 14px; height: 14px; }
+  .nav-links { display: flex; gap: 24px; align-items: center; font-size: 15px; }
+  .nav-links a { text-decoration: none; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a.btn-dark, .nav-links a.btn-dark:hover { color: #fff; }
+  .btn, .logo { white-space: nowrap; }
+  .btn {
+    display: inline-block; text-decoration: none; font-weight: 600;
+    padding: 12px 20px; border-radius: 999px; transition: transform .15s, background .15s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-gold { background: var(--gold); color: var(--ink); }
+  .btn-gold:hover { background: #ffc21a; }
+  .btn-dark { background: var(--ink); color: #fff; }
+  .btn-line { border: 1.5px solid var(--ink); color: var(--ink); }
+  .nav .btn { padding: 9px 16px; font-size: 14px; }
+
+  /* Hero */
+  .hero { padding: 88px 0 72px; background: linear-gradient(180deg, var(--bg-soft), #fff); }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 14px; }
+  h1 { font-size: clamp(36px, 6vw, 60px); line-height: 1.05; letter-spacing: -.035em; margin: 0 0 20px; max-width: 14ch; }
+  .lead { font-size: clamp(17px, 2.2vw, 20px); color: var(--ink-soft); max-width: 46ch; margin: 0 0 32px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-note { margin-top: 18px; font-size: 14px; color: var(--ink-soft); }
+
+  section { padding: 80px 0; }
+  h2 { font-size: clamp(28px, 4vw, 40px); letter-spacing: -.03em; line-height: 1.15; margin: 0 0 12px; }
+  .section-lead { color: var(--ink-soft); font-size: 18px; max-width: 56ch; margin: 0 0 40px; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step { border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 700; margin-bottom: 16px; }
+  .step h3 { margin: 0 0 8px; font-size: 19px; }
+  .step p { margin: 0; color: var(--ink-soft); }
+
+  /* Who */
+  .who { background: var(--bg-soft); }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chip { background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font-size: 15px; }
+
+  /* Pricing */
+  .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+  .plan { border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; display: flex; flex-direction: column; background: #fff; }
+  .plan.featured { border: 2px solid var(--ink); position: relative; }
+  .tag { position: absolute; top: -13px; left: 30px; background: var(--gold); color: var(--ink); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; letter-spacing: .03em; }
+  .plan h3 { margin: 0 0 6px; font-size: 20px; }
+  .price { font-size: 40px; font-weight: 800; letter-spacing: -.03em; margin: 8px 0 2px; }
+  .price span { font-size: 16px; font-weight: 500; color: var(--ink-soft); }
+  .plan-sub { color: var(--ink-soft); font-size: 15px; margin: 0 0 20px; }
+  .plan ul { list-style: none; padding: 0; margin: 0 0 28px; flex: 1; }
+  .plan li { padding: 7px 0 7px 28px; position: relative; font-size: 15px; }
+  .plan li::before { content: ""; position: absolute; left: 0; top: 12px; width: 16px; height: 16px; border-radius: 50%; background: var(--gold); -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='8'/%3E%3C/svg%3E"); }
+  .plan li::after { content: ""; position: absolute; left: 5px; top: 15px; width: 6px; height: 9px; border: solid var(--ink); border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .plan .btn { text-align: center; }
+  .addon { margin-top: 20px; border: 1px dashed #cbd5e1; border-radius: var(--radius); padding: 22px 26px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .addon p { margin: 0; color: var(--ink-soft); }
+  .addon strong { color: var(--ink); }
+
+  /* FAQ */
+  .faq { background: var(--bg-soft); }
+  details { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; margin-bottom: 12px; }
+  summary { font-weight: 600; cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--ink-soft); }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 12px 0 0; color: var(--ink-soft); }
+
+  /* CTA */
+  .cta { background: var(--ink); color: #fff; text-align: center; }
+  .cta h2 { color: #fff; }
+  .cta p { color: #d1d5db; font-size: 18px; max-width: 52ch; margin: 0 auto 32px; }
+
+  /* Policies */
+  .policies h3 { font-size: 18px; margin: 28px 0 8px; }
+  .policies p, .policies li { color: var(--ink-soft); font-size: 15px; }
+  .policies ul { padding-left: 20px; }
+
+  footer { border-top: 1px solid var(--line); padding: 40px 0; font-size: 14px; color: var(--ink-soft); }
+  .foot { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
+
+  @media (max-width: 860px) {
+    .steps, .plans { grid-template-columns: 1fr; }
+    .nav-links a:not(.btn) { display: none; }
+    .logo { font-size: 16px; }
+    section { padding: 64px 0; }
+    .hero { padding: 64px 0 56px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Magnificent Media home">
+      <span class="logo-mark"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 0v14l12-7z" fill="#f5b301"/></svg></span>
+      Magnificent Media
+    </a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-dark" href="mailto:jimmiezinn@magnificentmediaict.com?subject=Free%20sample%20edit">Free sample</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Short-form video for Wichita businesses</span>
+      <h1>Your phone clips, turned into videos people stop for.</h1>
+      <p class="lead">Send us the raw clips you already have. We edit them into captioned Reels, TikToks and Shorts every month, ready to post. No filming crew, no editing on your end.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="mailto:jimmiezinn@magnificentmediaict.com?subject=Free%20sample%20edit&body=Hi%2C%20I'd%20like%20a%20free%20sample%20edit.%20My%20business%20is%3A%20">Get a free sample edit</a>
+        <a class="btn btn-line" href="#pricing">See pricing</a>
+      </div>
+      <p class="hero-note">Send one clip. We'll edit it free within 24 hours. No catch, no card needed.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="section-lead">Three steps, and the only thing you do is hit record now and then.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Send your clips</h3>
+          <p>Upload the videos already on your phone: your work, your team, your customers' results, a quick tip. We'll send you a 10-minute shot list if you need ideas.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>We edit</h3>
+          <p>Strong hook in the first two seconds, tight cuts, word-by-word captions, clean sound, your colors and logo. Vertical and sized for every platform.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>You post</h3>
+          <p>Finished videos land in your shared folder within 5 business days, with a caption and hashtags for each and a suggested posting schedule.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="who">
+    <div class="wrap">
+      <h2>Made for local businesses</h2>
+      <p class="section-lead">If customers choose you after seeing your work, short video helps them find you first.</p>
+      <div class="chips">
+        <span class="chip">Med spas</span><span class="chip">Salons &amp; barbers</span><span class="chip">Gyms &amp; trainers</span>
+        <span class="chip">Dentists &amp; chiropractors</span><span class="chip">Realtors</span><span class="chip">Contractors &amp; home services</span>
+        <span class="chip">Restaurants</span><span class="chip">Churches</span><span class="chip">Coaches &amp; creators</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <h2>Simple monthly pricing</h2>
+      <p class="section-lead">Paid in advance each month. Cancel anytime before your next billing date. You own every finished video.</p>
+      <div class="plans">
+        <div class="plan">
+          <h3>Starter</h3>
+          <div class="price">$900<span>/month</span></div>
+          <p class="plan-sub">About $112 per video</p>
+          <ul>
+            <li>8 short videos a month</li>
+            <li>Word-by-word captions</li>
+            <li>Formatted for 1 platform</li>
+            <li>Delivered within 5 business days</li>
+            <li>1 round of revisions per video</li>
+          </ul>
+          <a class="btn btn-line" href="mailto:jimmiezinn@magnificentmediaict.com?subject=Starter%20plan">Start Starter</a>
+        </div>
+        <div class="plan featured">
+          <span class="tag">MOST POPULAR</span>
+          <h3>Growth</h3>
+          <div class="price">$1,500<span>/month</span></div>
+          <p class="plan-sub">About $125 per video, every platform</p>
+          <ul>
+            <li>12 short videos a month</li>
+            <li>Hook lines and captions</li>
+            <li>Copies for Instagram, TikTok, YouTube and Facebook</li>
+            <li>Posting calendar with captions and hashtags</li>
+            <li>Delivered within 5 business days</li>
+            <li>1 round of revisions per video</li>
+          </ul>
+          <a class="btn btn-dark" href="mailto:jimmiezinn@magnificentmediaict.com?subject=Growth%20plan">Start Growth</a>
+        </div>
+        <div class="plan">
+          <h3>Founding 90-day</h3>
+          <div class="price">$3,600<span> once</span></div>
+          <p class="plan-sub">Growth for 3 months, save $900. First 5 clients only.</p>
+          <ul>
+            <li>Everything in Growth for 90 days</li>
+            <li>36 videos total</li>
+            <li>Founding-client rate locked if you continue</li>
+            <li>Pay by card or bank transfer</li>
+          </ul>
+          <a class="btn btn-gold" href="mailto:jimmiezinn@magnificentmediaict.com?subject=Founding%2090-day%20plan">Claim a founding spot</a>
+        </div>
+      </div>
+      <div class="addon">
+        <p><strong>Creators and coaches:</strong> we can also set up an AI-assisted content workflow for your own channel, from planning to captions. <strong>$2,500 one-time.</strong></p>
+        <a class="btn btn-line" href="mailto:jimmiezinn@magnificentmediaict.com?subject=Creator%20workflow%20setup">Ask about it</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <h2>Questions</h2>
+      <p class="section-lead">Straight answers.</p>
+      <details>
+        <summary>I don't have much footage. Will this work?</summary>
+        <p>Yes. Most businesses have more than they think. We'll send a shot list of 10 quick clips you can film on your phone in about 10 minutes.</p>
+      </details>
+      <details>
+        <summary>Do you post the videos for us?</summary>
+        <p>We deliver finished videos with captions, hashtags and a suggested schedule so you can post in seconds. Growth clients get copies tuned for each platform.</p>
+      </details>
+      <details>
+        <summary>Can you guarantee more customers or views?</summary>
+        <p>No one honestly can. What we guarantee is the work: the number of videos, the quality, and on-time delivery. Consistent, well-edited video is what gives you the best chance.</p>
+      </details>
+      <details>
+        <summary>Who owns the videos?</summary>
+        <p>You do. Your footage and finished videos are yours. We never share or post them anywhere without your written permission.</p>
+      </details>
+      <details>
+        <summary>How do I pay?</summary>
+        <p>Through a secure Stripe payment link, by card or US bank transfer. We never see or store your card number.</p>
+      </details>
+      <details>
+        <summary>Are you local?</summary>
+        <p>Yes, we're based in Wichita, Kansas, and work with businesses across the metro, plus remote clients anywhere in the US.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Try it free first</h2>
+      <p>Send us one clip you already have. We'll turn it into a finished short video within 24 hours. If you like it, we'll talk. If not, you keep the video.</p>
+      <a class="btn btn-gold" href="mailto:jimmiezinn@magnificentmediaict.com?subject=Free%20sample%20edit&body=Hi%2C%20I'd%20like%20a%20free%20sample%20edit.%20My%20business%20is%3A%20">Get my free sample</a>
+    </div>
+  </section>
+
+  <section id="policies" class="policies">
+    <div class="wrap">
+      <h2>Policies</h2>
+
+      <h3 id="refunds">Refunds and cancellations</h3>
+      <ul>
+        <li>Every new client can get a free sample edit before paying anything.</li>
+        <li>Monthly plans are billed in advance. Cancel anytime by email before your next billing date and you won't be charged again.</li>
+        <li>If we haven't started work on your month's videos, you can request a full refund for that month within 7 days of payment.</li>
+        <li>If your first batch isn't delivered within 5 business days of us receiving your footage, you can request a full refund for that month.</li>
+        <li>Founding 90-day plan: if you cancel, months that haven't started are refunded at $1,200 per month.</li>
+        <li>Once a month's videos have been delivered, that month isn't refundable, but each video includes a round of revisions until it's right.</li>
+      </ul>
+
+      <h3 id="privacy">Privacy</h3>
+      <p>We use your footage, logo and business details only to make your videos. We don't sell or share your information, and we never post your content anywhere without your written permission. Payments are processed by Stripe; we never receive or store card numbers. Email us anytime to have your files deleted.</p>
+
+      <h3 id="terms">Terms</h3>
+      <p>By purchasing a plan you agree to the deliverables, turnaround and policies on this page. You confirm you have the rights to the footage, music and logos you send us. You own the finished videos once paid.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <strong style="color:var(--ink)">Magnificent Media</strong><br>
+      Short-form video editing · Wichita, Kansas
+    </div>
+    <div>
+      <a href="mailto:jimmiezinn@magnificentmediaict.com">jimmiezinn@magnificentmediaict.com</a><br>
+      <a href="tel:+13162059437">(316) 205-9437</a>
+    </div>
+    <div>
+      <a href="#refunds">Refunds</a> · <a href="#privacy">Privacy</a> · <a href="#terms">Terms</a><br>
+      © 2026 Magnificent Media
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
