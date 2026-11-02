@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Studio for Mac | Magnificent Media</title>
+<meta name="description" content="Magnificent Media Photo Studio: an AI photo editor for your Mac. One-tap Enhance that explains every change, AI masks, skin-safe color, Social Pack exports. Lifetime license, everything stays on your Mac.">
+<meta name="theme-color" content="#0b0a09">
+<meta property="og:title" content="Magnificent Media Photo Studio">
+<meta property="og:description" content="An AI photo editor for your Mac. Own it for life, no subscription.">
+<meta property="og:image" content="https://magnificentmediaict.com/photo-studio/media/02-vivid-edit.jpg">
+<link rel="icon" href="/photo-studio/media/app-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/luxe.css?v=4">
+<style>
+  .hero { padding: clamp(130px, 18vh, 190px) 0 clamp(56px, 8vh, 96px); text-align: center; }
+  .hero .icon { width: 108px; height: 108px; margin: 0 auto 26px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.7)); }
+  .hero h1 { font-size: clamp(46px, 8vw, 104px); line-height: .98; margin: 18px 0 22px; }
+  .hero .body-lg { margin: 0 auto; max-width: 54ch; }
+  .cta { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+  .price-note { margin-top: 18px; font-size: 13px; color: var(--stone); }
+  .price-note s { color: var(--stone); }
+  .price-note strong { color: var(--gold-hi); font-weight: 500; }
+  .shot { max-width: 1180px; margin: 0 auto; }
+  .shot img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 50px 100px -40px rgba(0,0,0,.95), 0 0 0 1px var(--line); }
+  .feature { display: grid; grid-template-columns: 1fr 1.5fr; gap: clamp(28px, 5vw, 80px); align-items: center; padding: clamp(56px, 9vh, 110px) 0; border-top: 1px solid var(--line); }
+  .feature.flip { grid-template-columns: 1.5fr 1fr; }
+  .feature.flip .text { order: 2; }
+  .feature h2 { font-size: clamp(34px, 4.2vw, 56px); margin: 14px 0 18px; }
+  .feature img { width: 100%; height: auto; border-radius: 5px; box-shadow: 0 40px 80px -36px rgba(0,0,0,.95), 0 0 0 1px var(--line); }
+  .list { columns: 2; column-gap: 48px; padding: 0; list-style: none; margin: 28px 0 0; }
+  .list li { break-inside: avoid; padding: 10px 0; border-bottom: 1px solid var(--line); color: var(--ivory-dim); font-size: 15px; }
+  .section { padding: clamp(64px, 10vh, 120px) 0; border-top: 1px solid var(--line); }
+  .section h2 { margin: 14px 0 20px; }
+  .plan { max-width: 640px; margin: 40px auto 0; padding: clamp(28px, 4vw, 48px); border: 1px solid rgba(201,169,110,.4); background: linear-gradient(180deg, rgba(201,169,110,.07), rgba(201,169,110,.01)); text-align: center; }
+  .plan .amount { font-family: var(--serif); font-size: clamp(64px, 9vw, 96px); line-height: 1; color: var(--ivory); }
+  .plan .amount s { font-size: .45em; color: var(--stone); margin-left: 10px; }
+  .plan ul { list-style: none; padding: 0; margin: 26px 0 30px; text-align: left; }
+  .plan li { padding: 9px 0; border-bottom: 1px solid var(--line); color: var(--ivory-dim); font-size: 15px; }
+  .plan li::before { content: ""; display: inline-block; width: 10px; height: 1px; background: var(--gold); vertical-align: middle; margin-right: 14px; }
+  .plan .small { font-size: 12.5px; color: var(--stone); margin-top: 18px; line-height: 1.6; }
+  .faq { max-width: 860px; margin: 32px auto 0; }
+  .center { text-align: center; }
+  .center .body-lg { margin: 0 auto; }
+  @media (max-width: 860px) {
+    .feature, .feature.flip { grid-template-columns: 1fr; }
+    .feature.flip .text { order: 0; }
+    .list { columns: 1; }
+  }
+</style>
+</head>
+<body>
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="wordmark" href="/" aria-label="Magnificent Media home">
+      <svg viewBox="0 0 30 30" aria-hidden="true"><rect x=".5" y=".5" width="29" height="29" fill="none" stroke="#c9a96e" stroke-opacity=".55"/><path d="M7 22V8.5l8 9 8-9V22" fill="none" stroke="#e6d1a3" stroke-width="1.2"/></svg>
+      <span>Magnificent Media</span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="link" href="#features">Features</a>
+      <a class="link" href="#price">Price</a>
+      <a class="link" href="/photo-studio/support/">Support</a>
+      <a class="btn btn-gold" href="/photo-studio/download/">Free trial</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <img class="icon" src="/photo-studio/media/app-icon.png" alt="Photo Studio app icon" width="108" height="108">
+    <span class="label gold">Magnificent Media Photo Studio · for Mac</span>
+    <h1>Your photos, <em>made magnificent.</em></h1>
+    <p class="body-lg">An AI photo editor that explains every change it makes. Enhance in one tap, mask the sky or subject in one click, and export ready for every feed. Everything happens on your Mac.</p>
+    <div class="cta">
+      <a class="btn btn-gold" href="https://buy.stripe.com/eVq9ATa4j1cLbHl94kgMw04?prefilled_promo_code=LAUNCH">Buy for life · $149 <span class="arrow"></span></a>
+      <a class="btn btn-glass" href="/photo-studio/download/">Try it free for 7 days</a>
+    </div>
+    <p class="price-note">Launch price <strong>$149</strong> <s>$199</s> · one payment, no subscription · 2 Macs · macOS 14 or later</p>
+  </section>
+
+  <div class="wrap shot reveal">
+    <img src="/photo-studio/media/02-vivid-edit.jpg" alt="Photo Studio editing a winter landscape in vivid color, with Enhance's plain-English explanations in the side panel" width="1600" height="1000">
+  </div>
+
+  <div class="wrap" id="features">
+    <section class="feature reveal">
+      <div class="text">
+        <span class="label gold">One tap, then your call</span>
+        <h2>Enhance that <em>shows its work.</em></h2>
+        <p class="body-lg">Enhance measures the light, color and faces in your photo and sets the real sliders. Then it lists every change in plain English, so you can keep it, tweak it or undo it.</p>
+      </div>
+      <img src="/photo-studio/media/01-enhance.jpg" alt="Enhance applied to a garden photo, with the list of changes it made" width="1600" height="1000" loading="lazy">
+    </section>
+
+    <section class="feature flip reveal">
+      <div class="text">
+        <span class="label gold">AI masks, made on your Mac</span>
+        <h2>Deepen the sky. <em>Only the sky.</em></h2>
+        <p class="body-lg">Select the subject, people, background or sky in one click, or paint and place gradients by hand. Each mask gets its own exposure, contrast, temperature and color.</p>
+      </div>
+      <img src="/photo-studio/media/03-sky-mask.jpg" alt="The sky mask deepening the blue sky over a hilltop" width="1600" height="1000" loading="lazy">
+    </section>
+
+    <section class="feature reveal">
+      <div class="text">
+        <span class="label gold">Looks that respect your edit</span>
+        <h2>Eight house looks. <em>Your strength.</em></h2>
+        <p class="body-lg">Ivory, Champagne Hour, Ink &amp; Bone, Tungsten Noir and more. Hover to preview, click to apply, set the amount. Looks sit on top of your corrections, never over them. Bring your own .cube LUTs too.</p>
+      </div>
+      <img src="/photo-studio/media/04-looks.jpg" alt="The Champagne Hour look on an autumn park, with the Looks grid" width="1600" height="1000" loading="lazy">
+    </section>
+
+    <section class="feature flip reveal">
+      <div class="text">
+        <span class="label gold">Color, the way you see it</span>
+        <h2>Grade like <em>a colorist.</em></h2>
+        <p class="body-lg">Three-way color grading, a tone curve per channel, an 8-band color mixer and Richness for deeper color without brightening. A vectorscope with a skin-tone line keeps faces honest.</p>
+      </div>
+      <img src="/photo-studio/media/06-color-grading.jpg" alt="Teal and amber color grading on a garden porch, with the tone curve and vectorscope" width="1600" height="1000" loading="lazy">
+    </section>
+
+    <section class="feature reveal">
+      <div class="text">
+        <span class="label gold">Straight lines, true frames</span>
+        <h2>Crop, straighten, <em>fix perspective.</em></h2>
+        <p class="body-lg">One click levels the horizon and squares up buildings. Crop to any ratio with face-aware framing.</p>
+      </div>
+      <img src="/photo-studio/media/05-crop-perspective.jpg" alt="A city street in the Crop and Straighten panel" width="1600" height="1000" loading="lazy">
+    </section>
+
+    <section class="feature flip reveal">
+      <div class="text">
+        <span class="label gold">Portrait tools</span>
+        <h2>Soft backgrounds. <em>Natural skin.</em></h2>
+        <p class="body-lg">Background Blur adds a clean lens blur behind your subject. Skin Guard keeps bold looks from turning skin orange or gray, and Skin Smooth softens blemishes while keeping pores.</p>
+      </div>
+      <img src="/photo-studio/media/07-background-blur.jpg" alt="Background Blur on a still life photo" width="1600" height="1000" loading="lazy">
+    </section>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="label gold">Everything included</span>
+      <h2>Pro tools, <em>calm design.</em></h2>
+      <ul class="list">
+        <li>Camera RAW (Canon, Nikon, Sony, Fujifilm, DNG and more), HEIC, JPEG, PNG, TIFF</li>
+        <li>Enhance in My Style: learns your taste from your own edits, privately</li>
+        <li>Match Look, and match a whole shoot to your best photo</li>
+        <li>Edit right inside Apple Photos</li>
+        <li>HDR export for iPhone HDR photos and RAW files</li>
+        <li>Social Pack: 1:1, 4:5 and 9:16 in one pass, faces kept in frame</li>
+        <li>Optional logo watermark, never placed over a face</li>
+        <li>Heal &amp; Clone, edge-aware noise reduction, RAW lens correction</li>
+        <li>Brush, radial and linear masks</li>
+        <li>Named versions and a plain-English history</li>
+        <li>Histogram, RGB parade and vectorscope</li>
+        <li>Ratings, picks and filters for the whole library</li>
+        <li>Location data removed from exports by default</li>
+        <li>English and Spanish</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section center" id="price">
+    <div class="wrap">
+      <span class="label gold">Own it</span>
+      <h2>One payment. <em>Yours for life.</em></h2>
+      <p class="body-lg">No subscription, no account, no uploads.</p>
+      <div class="plan">
+        <span class="label">Lifetime license · launch price</span>
+        <div class="amount">$149<s>$199</s></div>
+        <ul>
+          <li>Every Pro tool, unlocked</li>
+          <li>Use it on 2 of your Macs</li>
+          <li>Every version 1 update free (1.1, 1.2 and on)</li>
+          <li>Version 2.0 upgrade: $25 for license holders</li>
+          <li>Works offline, no account</li>
+          <li>7-day free trial before you buy</li>
+        </ul>
+        <a class="btn btn-gold" href="https://buy.stripe.com/eVq9ATa4j1cLbHl94kgMw04?prefilled_promo_code=LAUNCH">Buy for life · $149 <span class="arrow"></span></a>
+        <p class="small">Secure checkout by Stripe. The LAUNCH code is applied for you. Your license key arrives by email from hello@magnificentmediaict.com within one business day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="center">
+        <span class="label gold">Questions</span>
+        <h2>Good to <em>know.</em></h2>
+      </div>
+      <div class="faq">
+        <details><summary>How does the free trial work?<span class="pm"></span></summary><p>Download the app and everything is unlocked for 7 days. No card needed. After the trial the free editor keeps working, with exports up to 2048 px; the Pro tools wait for your license key.</p></details>
+        <details><summary>How do I unlock it after buying?<span class="pm"></span></summary><p>We email your license key. In the app, click any "Unlock with Pro" button, paste the key and click Activate. It works offline.</p></details>
+        <details><summary>How many Macs can I use it on?<span class="pm"></span></summary><p>One license covers 2 of your Macs, for example a desktop and a laptop. Enter the same key on each.</p></details>
+        <details><summary>Are updates free?<span class="pm"></span></summary><p>Every version 1 update (1.1, 1.2, 1.3 and so on) is free, and the app tells you when one is out. When version 2.0 arrives, license holders can upgrade for $25. Your license never expires.</p></details>
+        <details><summary>Are my photos uploaded anywhere?<span class="pm"></span></summary><p>No. Every edit and every AI feature runs on your Mac. Your originals are never changed. See the <a href="/photo-studio/privacy/" style="border-bottom:1px solid var(--gold)">privacy policy</a>.</p></details>
+        <details><summary>What do I need?<span class="pm"></span></summary><p>A Mac with macOS 14 Sonoma or later. HDR export needs macOS 15 or later.</p></details>
+        <details><summary>Is there a subscription version?<span class="pm"></span></summary><p>Yes. Photo Studio is also coming to the Mac App Store with a monthly or yearly Photo Studio Pro plan. A website license unlocks only the website download, and an App Store subscription unlocks only the App Store app.</p></details>
+        <details><summary>Can I get help?<span class="pm"></span></summary><p>Email hello@magnificentmediaict.com with "Photo Studio" in the subject. We reply within one business day. The <a href="/photo-studio/support/" style="border-bottom:1px solid var(--gold)">support page</a> has shortcuts and answers.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="stack">
+      <span class="wordmark"><svg viewBox="0 0 30 30" aria-hidden="true"><rect x=".5" y=".5" width="29" height="29" fill="none" stroke="#c9a96e" stroke-opacity=".55"/><path d="M7 22V8.5l8 9 8-9V22" fill="none" stroke="#e6d1a3" stroke-width="1.2"/></svg><span>Magnificent Media</span></span>
+      <span style="margin-top:10px">Wichita, Kansas</span>
+    </div>
+    <div class="stack">
+      <a href="mailto:hello@magnificentmediaict.com">hello@magnificentmediaict.com</a>
+      <span>Online only · Replies within one business day</span>
+    </div>
+    <div class="stack">
+      <span class="links"><a href="/photo-studio/download/">Download</a><a href="/photo-studio/support/">Support</a><a href="/photo-studio/privacy/">Privacy</a></span>
+      <span>© 2026 Magnificent Media</span>
+    </div>
+  </div>
+</footer>
+<script>
+  const hdr = document.getElementById('hdr');
+  addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 20), { passive: true });
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
