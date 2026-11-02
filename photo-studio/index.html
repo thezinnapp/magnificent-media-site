@@ -44,6 +44,7 @@
   .faq { max-width: 860px; margin: 32px auto 0; }
   .center { text-align: center; }
   .center .body-lg { margin: 0 auto; }
+  [data-launch-only][hidden], [data-after-launch][hidden] { display: none !important; }
   @media (max-width: 860px) {
     .feature, .feature.flip { grid-template-columns: 1fr; }
     .feature.flip .text { order: 0; }
@@ -74,10 +75,10 @@
     <h1>Your photos, <em>made magnificent.</em></h1>
     <p class="body-lg">An AI photo editor that explains every change it makes. Enhance in one tap, mask the sky or subject in one click, and export ready for every feed. Everything happens on your Mac.</p>
     <div class="cta">
-      <a class="btn btn-gold" href="https://buy.stripe.com/eVq9ATa4j1cLbHl94kgMw04?prefilled_promo_code=LAUNCH">Buy for life · $149 <span class="arrow"></span></a>
+      <a class="btn btn-gold" href="https://buy.stripe.com/eVq9ATa4j1cLbHl94kgMw04?prefilled_promo_code=LAUNCH"><span data-launch-price>Buy for life · $149</span> <span class="arrow"></span></a>
       <a class="btn btn-glass" href="/photo-studio/download/">Try it free for 7 days</a>
     </div>
-    <p class="price-note">Launch price <strong>$149</strong> <s>$199</s> · one payment, no subscription · 2 Macs · macOS 14 or later</p>
+    <p class="price-note"><span data-launch-only>Launch price <strong>$149</strong> <s>$199</s></span><strong data-after-launch hidden>$199</strong> · one payment, no subscription · 2 Macs · macOS 14 or later</p>
   </section>
 
   <div class="wrap shot reveal">
@@ -169,8 +170,8 @@
       <h2>One payment. <em>Yours for life.</em></h2>
       <p class="body-lg">No subscription, no account, no uploads.</p>
       <div class="plan">
-        <span class="label">Lifetime license · launch price</span>
-        <div class="amount">$149<s>$199</s></div>
+        <span class="label">Lifetime license<span data-launch-only> · launch price</span></span>
+        <div class="amount"><span data-launch-only>$149<s>$199</s></span><span data-after-launch hidden>$199</span></div>
         <ul>
           <li>Every Pro tool, unlocked</li>
           <li>Use it on 2 of your Macs</li>
@@ -179,8 +180,8 @@
           <li>Works offline, no account</li>
           <li>7-day free trial before you buy</li>
         </ul>
-        <a class="btn btn-gold" href="https://buy.stripe.com/eVq9ATa4j1cLbHl94kgMw04?prefilled_promo_code=LAUNCH">Buy for life · $149 <span class="arrow"></span></a>
-        <p class="small">Secure checkout by Stripe. The LAUNCH code is applied for you. Your license key arrives by email from hello@magnificentmediaict.com within one business day.</p>
+        <a class="btn btn-gold" href="https://buy.stripe.com/eVq9ATa4j1cLbHl94kgMw04?prefilled_promo_code=LAUNCH"><span data-launch-price>Buy for life · $149</span> <span class="arrow"></span></a>
+        <p class="small">Secure checkout by Stripe. <span data-launch-only>The LAUNCH code is applied for you. </span>Your license key arrives by email from hello@magnificentmediaict.com within one business day.</p>
       </div>
     </div>
   </section>
@@ -227,5 +228,6 @@
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
+<script src="/assets/launch-end.js?v=1"></script>
 </body>
 </html>
