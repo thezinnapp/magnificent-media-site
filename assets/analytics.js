@@ -80,7 +80,7 @@
   document.addEventListener('click', function (e) { if (e.button === 0) track(e); }, true);
   document.addEventListener('auxclick', function (e) { if (e.button === 1) track(e); }, true);
 
-  // Plays of every <video>: video_start on the first play, video_progress at 10/25/50/75 %, video_complete at the end.
+  // Plays of every <video>: video_start when playback first starts, video_progress at 10/25/50/75 %, video_complete at the end.
   function watch(v) {
     var marks = [10, 25, 50, 75], sent, started, dur = 0;
     function reset() { sent = {}; started = false; }
@@ -98,7 +98,8 @@
     reset();
     v.addEventListener('durationchange', function () { if (isFinite(v.duration) && v.duration > 0) dur = v.duration; });
     v.addEventListener('loadstart', reset);
-    v.addEventListener('play', function () { if (!started) { started = true; gtag('event', 'video_start', info(0)); } });
+    // 'playing' (not 'play'): films load only when pressed, so by then the length is known
+    v.addEventListener('playing', function () { if (!started) { started = true; gtag('event', 'video_start', info(0)); } });
     v.addEventListener('timeupdate', function () {
       if (!started || !v.duration || !isFinite(v.duration)) return;
       var pct = v.currentTime / v.duration * 100;
