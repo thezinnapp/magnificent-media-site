@@ -93,13 +93,13 @@
   </section>
 
   <section class="wrap film reveal" id="film" aria-label="The Photo Studio film">
-    <div class="frame" id="adFrame">
-      <video id="adVid" poster="/photo-studio/media/ad-3d-poster.webp" controls playsinline preload="none" data-ga-title="Photo Studio ad (3D)" aria-label="Photo Studio for Mac, a 23-second film">
+    <div class="frame" id="filmFrame">
+      <video id="filmVid" poster="/photo-studio/media/ad-3d-poster.webp" controls playsinline preload="none" data-ga-title="Photo Studio ad (3D)" aria-label="Photo Studio for Mac, a 23-second film">
         <source src="/photo-studio/media/ad-3d-phone.mp4?v=1" data-after-launch-src="/photo-studio/media/ad-3d-dec-phone.mp4?v=1" type="video/mp4" media="(max-width: 860px)">
         <source src="/photo-studio/media/ad-3d.mp4?v=1" data-after-launch-src="/photo-studio/media/ad-3d-dec.mp4?v=1" type="video/mp4">
       </video>
     </div>
-    <button class="play-row" type="button" data-video="adVid"><span class="play-btn" aria-hidden="true"></span><span class="play-label">Watch the film · 0:23</span></button>
+    <button class="play-row" type="button" data-video="filmVid"><span class="play-btn" aria-hidden="true"></span><span class="play-label">Watch the film · 0:23</span></button>
     <p class="film-page"><a href="/photo-studio/film/">Key moments and a link to share</a></p>
   </section>
 
@@ -252,15 +252,15 @@
 
   // The film: the play control sits below the picture, and a click on the picture starts it too
   // (the markup keeps native controls for visitors without JavaScript)
-  const ad = document.getElementById('adVid'), adFrame = document.getElementById('adFrame');
+  const ad = document.getElementById('filmVid'), filmFrame = document.getElementById('filmFrame');
   ad.controls = false;
   const playAd = () => { ad.controls = true; const p = ad.play(); if (p) p.catch(() => {}); };
-  document.querySelector('.play-row[data-video="adVid"]').addEventListener('click', playAd);
+  document.querySelector('.play-row[data-video="filmVid"]').addEventListener('click', playAd);
   ad.addEventListener('click', () => { if (!ad.controls) playAd(); });
-  ad.addEventListener('play', () => adFrame.classList.add('playing'));
-  ad.addEventListener('pause', () => { if (ad.currentTime === 0 || ad.ended) adFrame.classList.remove('playing'); });
+  ad.addEventListener('play', () => filmFrame.classList.add('playing'));
+  ad.addEventListener('pause', () => { if (ad.currentTime === 0 || ad.ended) filmFrame.classList.remove('playing'); });
   // load() brings the poster back; it waits a tick so the analytics 'ended' listener still reads the finished film
-  ad.addEventListener('ended', () => { adFrame.classList.remove('playing'); ad.controls = false; setTimeout(() => ad.load(), 0); });
+  ad.addEventListener('ended', () => { filmFrame.classList.remove('playing'); ad.controls = false; setTimeout(() => ad.load(), 0); });
 </script>
 <script src="/assets/launch-end.js?v=3"></script>
 </body>
