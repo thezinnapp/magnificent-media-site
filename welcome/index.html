@@ -71,6 +71,8 @@
   .check input:checked + span::before { border-color: var(--gold); background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.6 2.6L9 1' fill='none' stroke='%230b0a09' stroke-width='1.6'/%3E%3C/svg%3E") center no-repeat; }
   .check input:focus-visible + span { outline: 1px solid var(--gold-hi); outline-offset: 3px; }
   .check span:active { transform: translateY(1px); }
+  .check span a { color: var(--gold-hi); text-decoration: underline; text-underline-offset: 3px; }
+  .check .agree { font-style: normal; text-transform: none; letter-spacing: normal; line-height: 1.5; }
   .submit-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 10px; }
   .submit-row .hint { max-width: 36ch; }
   button.btn { font-family: var(--sans); }
@@ -185,12 +187,28 @@
         </div>
 
         <div class="field">
+          <label>Licensed music and stock footage (B-roll)? <span class="hint">(optional extras; see the <a href="/#music-terms" target="_blank" rel="noopener">posting deadline</a>)</span></label>
+          <div class="checks">
+            <label class="check"><input type="radio" name="music_and_broll" value="Yes, add music and B-roll" required><span>Yes, music and B-roll</span></label>
+            <label class="check"><input type="radio" name="music_and_broll" value="Music only"><span>Music only</span></label>
+            <label class="check"><input type="radio" name="music_and_broll" value="B-roll only"><span>B-roll only</span></label>
+            <label class="check"><input type="radio" name="music_and_broll" value="No, neither"><span>No, neither</span></label>
+          </div>
+        </div>
+
+        <div class="field">
           <label for="avoid">Anything we should never say or show? <span class="hint">(optional)</span></label>
           <textarea id="avoid" name="do_not_show"></textarea>
         </div>
         <div class="field">
           <label for="cta">How should viewers contact you? <span class="hint">(this goes in captions)</span></label>
           <input id="cta" name="call_to_action" placeholder="Book at yoursite.com / Call (316) 555-0100 / DM us">
+        </div>
+
+        <div class="field">
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="terms_agreed" value="Yes, agreed to the Terms incl. the music and B-roll posting deadline (effective 2026-11-03)" required><span><i class="agree">I agree to the <a href="/#terms" target="_blank" rel="noopener">Terms</a>, including the music and B-roll posting deadline.</i></span></label>
+          </div>
         </div>
 
         <div class="submit-row">
@@ -243,7 +261,7 @@
       <details><summary>How big can files be?<span class="pm"></span></summary><p>Large files are fine. Upload the originals. If an upload stops, open the link again and re-send that clip.</p></details>
       <details><summary>Can I send old videos or photos?<span class="pm"></span></summary><p>Yes. Old videos are great material. Photos can be used as quick slides inside a video.</p></details>
       <details><summary>Do you post the videos for me?<span class="pm"></span></summary><p>We deliver finished videos with captions, hashtags and a posting schedule so you can post in seconds. Growth plans include versions tuned for each platform.</p></details>
-      <details><summary>Can I use music?<span class="pm"></span></summary><p>Add a trending sound from the app's own music library when you post. That's licensed for you by the platform. We keep the voice clear so any sound fits underneath.</p></details>
+      <details><summary>Can I use music?<span class="pm"></span></summary><p>Yes, in two ways. We can add licensed music and stock footage (B-roll) for you if you choose it on the form. Videos that include them must be posted publicly before the <a href="/#music-terms">posting deadline in our Terms</a>. Or you can add a trending sound from the app's own music library when you post, which the platform licenses for you. Either way, we keep the voice clear so the music sits underneath.</p></details>
       <details><summary>How do revisions work?<span class="pm"></span></summary><p>Reply to the delivery email with the video number and what to change. Each video includes one round of revisions.</p></details>
       <details><summary>How do I cancel or change plans?<span class="pm"></span></summary><p>Email us before your next billing date and you won't be charged again. The Founding 90-day plan is a prepaid, non-refundable rate. See the <a href="/#refunds">refund policy</a>.</p></details>
       <details><summary>Who owns the videos?<span class="pm"></span></summary><p>You do. We never post or share your footage anywhere without your written permission.</p></details>
