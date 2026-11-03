@@ -125,6 +125,8 @@ header.scrolled { background: rgba(11,10,9,.78); border-bottom-color: var(--line
 .wordmark { display: flex; align-items: center; gap: 14px; }
 .wordmark svg { width: 30px; height: 30px; flex: none; }
 .wordmark span { font-family: var(--serif); font-weight: 500; font-size: 15px; letter-spacing: .38em; text-transform: uppercase; white-space: nowrap; }
+/* Trademark symbol after the wordmark (owner decision 2026-11-02): small, raised, gold, outside the letter-spacing */
+.wordmark span::after { content: "\2122"; font-family: var(--sans, sans-serif); font-weight: 400; font-size: max(.55em, 7px); letter-spacing: 0; vertical-align: super; line-height: 0; margin-left: -.2em; color: var(--gold, #c9a96e); }
 .nav-links { display: flex; align-items: center; gap: 40px; }
 .nav-links a.link { font-size: 11px; letter-spacing: .28em; text-transform: uppercase; color: var(--ivory-dim); position: relative; padding: 6px 0; }
 .nav-links a.link::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 0; height: 1px; background: var(--gold); transition: right .35s ease; }
