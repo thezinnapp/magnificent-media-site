@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/assets/analytics.js?v=1" async></script>
 <title>Magnificent Media | Short-form film for local businesses</title>
 <meta name="description" content="Magnificent Media composes the clips already on your phone into captioned Reels, TikToks and Shorts every month. A done-for-you short-form video studio in Wichita, Kansas.">
 <meta property="og:title" content="Magnificent Media">
@@ -132,6 +133,8 @@
   .policy-grid h3 { font-size: clamp(26px, 2.6vw, 34px); margin: 0; }
   #terms { min-height: calc(100svh - 440px); } /* room for the last link to scroll its section under the header */
   .policy-grid p, .policy-grid li { color: var(--stone); font-size: 14.5px; line-height: 1.8; max-width: 66ch; }
+  .policy-grid p + p { margin-top: 14px; }
+  .policy-grid p a { color: var(--ivory-dim); text-decoration: underline; text-underline-offset: 3px; }
   .policy-grid ul { margin: 0; padding-left: 16px; }
   .policy-grid li { margin-bottom: 10px; }
 
@@ -414,7 +417,10 @@
       </div>
       <div id="privacy">
         <h3>Privacy</h3>
-        <p>We use your footage, logo and business details only to make your videos. We don't sell or share your information, and we never post your content anywhere without your written permission. Payments are processed by Stripe; we never receive or store card numbers. Email us anytime to have your files deleted.</p>
+        <div class="policy-body">
+          <p>We use your footage, logo and business details only to make your videos. We don't sell or share your information, and we never post your content anywhere without your written permission. Payments are processed by Stripe; we never receive or store card numbers. Email us anytime to have your files deleted.</p>
+          <p>This website uses Google Analytics to count visits and see which pages, films and buttons are used. It sets no advertising cookies, sets no cookies at all for visitors in the EU, UK and Switzerland, turns off entirely when your browser sends a Global Privacy Control signal, and its data is kept for 14 months. You can also opt out with <a href="https://tools.google.com/dlpage/gaoptout">Google's opt-out add-on</a>.</p>
+        </div>
       </div>
       <div id="terms">
         <h3>Terms</h3>

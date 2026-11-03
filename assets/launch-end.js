@@ -1,6 +1,7 @@
 // The LAUNCH price ($149) ends Nov 30, 2026 at 11:59 PM CT. Stripe expires the LAUNCH
 // code at the same moment (promo_1UXLItFwYg1BuWIIqcsi9xTv, expires_at 1796104740), so from
 // then on the page shows $199 and the buy links stop pre-filling the code.
+// Films switch to their December cut too (<source data-after-launch-src>), waiting for the end if one is playing.
 // After the deadline, tools/launch_end_cleanup.py hard-codes the $199 version into the HTML.
 (function () {
   var END = 1796104740000; // 2026-11-30 23:59:00 CST = 2026-12-01 05:59:00 UTC
@@ -12,6 +13,16 @@
     document.querySelectorAll('[data-after-launch]').forEach(function (el) { el.hidden = false; });
     document.querySelectorAll('a[href*="prefilled_promo_code=LAUNCH"]').forEach(function (a) {
       a.href = a.href.replace(/[?&]prefilled_promo_code=LAUNCH/, '');
+    });
+    document.querySelectorAll('video').forEach(function (v) {
+      var sources = v.querySelectorAll('source[data-after-launch-src]');
+      if (!sources.length) return;
+      function swap() {
+        sources.forEach(function (s) { s.src = s.getAttribute('data-after-launch-src'); s.removeAttribute('data-after-launch-src'); });
+        v.load();
+      }
+      if (v.paused && (v.currentTime === 0 || v.ended)) swap();
+      else v.addEventListener('ended', function () { setTimeout(swap, 0); }, { once: true });
     });
   }
   function check() { if (!done && Date.now() >= END) endLaunch(); }
