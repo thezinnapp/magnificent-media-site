@@ -15,15 +15,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/luxe.css?v=5">
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "VideoObject",
- "name": "Magnificent Media Photo Studio for Mac",
- "description": "A 23-second film of Magnificent Media Photo Studio, the AI photo editor for Mac: one-click Enhance that explains every change, original looks, a sky mask, color grading and Social Pack exports for every feed.",
- "thumbnailUrl": ["https://magnificentmediaict.com/photo-studio/media/ad-3d-poster.webp"],
- "uploadDate": "2026-11-03T09:00:00-06:00",
- "duration": "PT23S",
- "contentUrl": "https://magnificentmediaict.com/photo-studio/media/ad-3d.mp4"}
-</script>
 <style>
   .hero { padding: clamp(130px, 18vh, 190px) 0 clamp(56px, 8vh, 96px); text-align: center; }
   .hero .icon { width: 108px; height: 108px; margin: 0 auto 26px; filter: drop-shadow(0 18px 30px rgba(0,0,0,.7)); }
@@ -38,6 +29,8 @@
   .film .frame { aspect-ratio: 16/9; border-radius: 6px; cursor: pointer; box-shadow: 0 50px 100px -40px rgba(0,0,0,.95), 0 0 0 1px var(--line); }
   .film .frame.playing { cursor: auto; }
   .film .play-row { width: 100%; justify-content: center; margin-top: 22px; }
+  .film .film-page { text-align: center; margin-top: 14px; font-size: 13px; color: var(--stone); }
+  .film .film-page a { border-bottom: 1px solid rgba(201,169,110,.55); }
   .shot { max-width: 1180px; margin: 0 auto; }
   .shot img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 50px 100px -40px rgba(0,0,0,.95), 0 0 0 1px var(--line); }
   .feature { display: grid; grid-template-columns: 1fr 1.5fr; gap: clamp(28px, 5vw, 80px); align-items: center; padding: clamp(56px, 9vh, 110px) 0; border-top: 1px solid var(--line); }
@@ -77,6 +70,7 @@
       <span>Magnificent Media</span>
     </a>
     <nav class="nav-links" aria-label="Main">
+      <a class="link" href="/photo-studio/film/">Film</a>
       <a class="link" href="#features">Features</a>
       <a class="link" href="#price">Price</a>
       <a class="link" href="/photo-studio/support/">Support</a>
@@ -106,6 +100,7 @@
       </video>
     </div>
     <button class="play-row" type="button" data-video="adVid"><span class="play-btn" aria-hidden="true"></span><span class="play-label">Watch the film · 0:23</span></button>
+    <p class="film-page"><a href="/photo-studio/film/">Key moments and a link to share</a></p>
   </section>
 
   <div class="wrap shot reveal">
