@@ -2,13 +2,19 @@
 // never The ZINN App's account, property or tag (owner rule 2026-11-03). Sends page views (automatic), plays of
 // every <video> (video_start, video_progress at 10/25/50/75 %, video_complete) and the key clicks:
 // buy (begin_checkout), free trial (trial_click), Mac download (file_download), email (generate_lead / email_click).
-// No advertising cookies anywhere; no analytics cookies in the EEA, UK and Switzerland; nothing at all for
-// browsers that send Global Privacy Control. Visit any page with ?internal=1 once per browser to mark the owner's
-// and the agents' own visits (GA's "Internal Traffic" filter drops them); ?internal=0 undoes it.
+// Nothing at all for browsers that send Global Privacy Control or for devices set to a European time zone; for
+// anyone Google places in the EU/EEA, UK or Switzerland anyway, no cookies (consent defaults). No advertising
+// cookies anywhere; the _ga cookies last 14 months, matching GA's 14-month retention. These promises are written
+// on /#privacy and /photo-studio/privacy/: change both pages before changing any of them. Visit any page with
+// ?internal=1 once per browser to mark the owner's and the agents' own visits (GA's "Internal Traffic" filter drops
+// them); ?internal=0 undoes it.
 (function () {
   var ID = 'G-3078E7HX3R';   // GA4 property 562093547 "magnificentmediaict.com" (account 414517609, hello@)
   if (!/^G-[A-Z0-9]{6,}$/.test(ID)) return;
   if (navigator.globalPrivacyControl === true) return;
+  var tz = '';
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  if (/^Europe\//.test(tz) || /^(Atlantic\/(Reykjavik|Canary|Madeira|Azores)|Asia\/(Nicosia|Famagusta)|Indian\/(Reunion|Mayotte)|America\/(Guadeloupe|Martinique|Cayenne|Marigot))$/.test(tz)) return;
 
   var internal = false;
   try {
@@ -22,9 +28,9 @@
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
   gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' });
-  gtag('consent', 'default', { analytics_storage: 'denied', region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'] });
+  gtag('consent', 'default', { analytics_storage: 'denied', region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH', 'RE', 'GP', 'MQ', 'GF', 'YT', 'MF', 'AX'] });
   gtag('js', new Date());
-  var config = { allow_google_signals: false, allow_ad_personalization_signals: false };
+  var config = { allow_google_signals: false, allow_ad_personalization_signals: false, cookie_expires: 36720000 };   // 425 days
   if (internal) config.traffic_type = 'internal';
   if (/[?&]ga_debug=1\b/.test(location.search)) config.debug_mode = true;
   gtag('config', ID, config);
@@ -48,7 +54,8 @@
   // Stripe Payment Links shown on the site: id → product. The price follows the link (LAUNCH code = $149).
   var PRODUCTS = { eVq9ATa4j1cLbHl94kgMw04: { id: 'photo-studio-lifetime', name: 'Photo Studio Lifetime License', price: function (href) { return /prefilled_promo_code=LAUNCH/.test(href) ? 149 : 199; } } };
 
-  document.addEventListener('click', function (e) {
+  // Left clicks and keyboard activation arrive as 'click'; a middle click (open in a new tab) only as 'auxclick'.
+  function track(e) {
     var a = e.target.closest && e.target.closest('a[href]');
     if (!a) return;
     var href = a.href, loc = where(a);
@@ -69,7 +76,9 @@
       var lead = /sample|plan|founding|creator|starter|growth/i.test(subject);
       gtag('event', lead ? 'generate_lead' : 'email_click', { email_subject: subject.slice(0, 100), link_location: loc, link_text: text(a) });
     }
-  }, true);
+  }
+  document.addEventListener('click', function (e) { if (e.button === 0) track(e); }, true);
+  document.addEventListener('auxclick', function (e) { if (e.button === 1) track(e); }, true);
 
   // Plays of every <video>: video_start on the first play, video_progress at 10/25/50/75 %, video_complete at the end.
   function watch(v) {
