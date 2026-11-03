@@ -68,6 +68,7 @@
   .check span::before { content: ""; width: 14px; height: 14px; flex: none; border: 1px solid rgba(237,231,221,.4); transition: background .2s, border-color .2s; }
   .check:hover span { border-color: rgba(201,169,110,.5); }
   .check input:checked + span { color: var(--ivory); border-color: var(--gold); background: rgba(201,169,110,.10); }
+  .check input:disabled + span { opacity: .35; cursor: not-allowed; text-decoration: line-through; }
   .check input:checked + span::before { border-color: var(--gold); background: var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l2.6 2.6L9 1' fill='none' stroke='%230b0a09' stroke-width='1.6'/%3E%3C/svg%3E") center no-repeat; }
   .check input:focus-visible + span { outline: 1px solid var(--gold-hi); outline-offset: 3px; }
   .check span:active { transform: translateY(1px); }
@@ -189,11 +190,12 @@
         <div class="field">
           <label>Licensed music and stock footage (B-roll)? <span class="hint">(optional extras; see the <a href="/#music-terms" target="_blank" rel="noopener">posting deadline</a>)</span></label>
           <div class="checks">
-            <label class="check"><input type="radio" name="music_and_broll" value="Yes, add music and B-roll" required><span>Yes, music and B-roll</span></label>
-            <label class="check"><input type="radio" name="music_and_broll" value="Music only"><span>Music only</span></label>
-            <label class="check"><input type="radio" name="music_and_broll" value="B-roll only"><span>B-roll only</span></label>
-            <label class="check"><input type="radio" name="music_and_broll" value="No, neither"><span>No, neither</span></label>
+            <label class="check"><input type="radio" name="music_and_broll" value="Yes, add music and B-roll" data-needs="music broll"><span>Yes, music and B-roll</span></label>
+            <label class="check"><input type="radio" name="music_and_broll" value="Music only" data-needs="music"><span>Music only</span></label>
+            <label class="check"><input type="radio" name="music_and_broll" value="B-roll only" data-needs="broll"><span>B-roll only</span></label>
+            <label class="check"><input type="radio" name="music_and_broll" value="No, neither" required><span>No, neither</span></label>
           </div>
+          <p class="hint" id="extras-paused" hidden></p>
         </div>
 
         <div class="field">

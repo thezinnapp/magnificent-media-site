@@ -36,6 +36,7 @@
   .hero h1 em { display: block; padding-left: .55em; }
   .hero .body-lg { margin-bottom: 40px; color: #cfc7bb; }
   .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-ctas-2 { margin-top: 14px; }
   .hero-meta { position: absolute; left: var(--gutter); bottom: clamp(56px, 9vh, 110px); display: flex; flex-direction: column; gap: 10px; }
   .hero-meta .label { writing-mode: vertical-rl; transform: rotate(180deg); }
   .scroll-cue { position: absolute; left: 50%; bottom: 24px; width: 1px; height: 48px; background: linear-gradient(var(--gold), transparent); animation: cue 2.4s ease-in-out infinite; }
@@ -205,6 +206,9 @@
         <div class="hero-ctas">
           <a class="btn btn-gold" href="mailto:hello@magnificentmediaict.com?subject=Free%20sample%20edit&amp;body=Hi%2C%20I'd%20like%20a%20free%20sample%20edit.%20My%20business%20is%3A%20">Free sample edit <span class="arrow"></span></a>
           <a class="btn btn-glass" href="/demo/">See the work</a>
+        </div>
+        <div class="hero-ctas hero-ctas-2">
+          <a class="btn btn-glass" href="/photo-studio/film/" data-ga-location="hero">Try Photo Studio <span class="arrow"></span></a>
         </div>
       </div>
     </div>
@@ -433,7 +437,7 @@
           <ol>
             <li><strong>Your choice.</strong> Adding licensed music or stock footage (&ldquo;B-roll&rdquo;) to your videos is optional. Tell us on your intake form or by email whether you want it. If you don't, we deliver your videos without it.</li>
             <li><strong>Our licences.</strong> The music and B-roll we add come from libraries Magnificent Media subscribes to (currently Epidemic Sound, Motion Array and Artlist). Those licences let us include them in the videos we make for you. They are not transferred to you, and they cover a video only if it is first posted publicly while our subscriptions are active. We never give you the music or footage as separate files, and you may not extract, reuse or share them apart from the finished video we delivered.</li>
-            <li><strong>Posting deadline.</strong> If you post a video that contains music or B-roll we added on social media or anywhere else online, you agree to post it publicly no later than <strong>August 19, 2027, at 11:59 PM Central Time</strong> (the &ldquo;Posting Deadline&rdquo;). &ldquo;Publicly&rdquo; means anyone can see it. Private, unlisted, draft and close-friends-only posts don't count, and neither do scheduled posts that haven't gone live. If we renew our subscriptions, we may move the Posting Deadline later by updating this page. The Posting Deadline shown here when you post is the one that applies.</li>
+            <li><strong>Posting deadline.</strong> If you post a video that contains music or B-roll we added on social media or anywhere else online, you agree to post it publicly no later than <strong id="posting-deadline">August 19, 2027, at 11:59 PM Central Time</strong> (the &ldquo;Posting Deadline&rdquo;). &ldquo;Publicly&rdquo; means anyone can see it. Private, unlisted, draft and close-friends-only posts don't count, and neither do scheduled posts that haven't gone live. If we renew our subscriptions, we may move the Posting Deadline later by updating this page. The Posting Deadline shown here when you post is the one that applies.</li>
             <li><strong>Clearing your posts.</strong> Within 7 days of posting a video that contains music we added, send us the link to each post, or add it through the clearance invitation we send you, so we can register it with the music library. This helps prevent automated copyright claims.</li>
             <li><strong>Posts after the deadline or outside these terms.</strong> Some uses are not covered by our licences and are at your own risk:
               <ul>
