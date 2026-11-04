@@ -10,6 +10,7 @@
 <meta property="og:title" content="Magnificent Media Photo Studio">
 <meta property="og:description" content="An AI photo editor for your Mac. Own it for life, no subscription.">
 <meta property="og:image" content="https://magnificentmediaict.com/photo-studio/media/02-vivid-edit.jpg">
+<link rel="canonical" href="https://magnificentmediaict.com/photo-studio/">
 <link rel="icon" href="/photo-studio/media/app-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,6 +32,10 @@
   .film .play-row { width: 100%; justify-content: center; margin-top: 22px; }
   .film .film-page { text-align: center; margin-top: 14px; font-size: 13px; color: var(--stone); }
   .film .film-page a { border-bottom: 1px solid rgba(201,169,110,.55); }
+  .film .cta { margin-top: 26px; }
+  .film-link { margin-top: 16px; font-size: 14px; }
+  .film-link a { color: var(--ivory-dim); border-bottom: 1px solid rgba(201,169,110,.55); padding-bottom: 2px; }
+  .film-link a:hover { color: var(--ivory); }
   .shot { max-width: 1180px; margin: 0 auto; }
   .shot img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 50px 100px -40px rgba(0,0,0,.95), 0 0 0 1px var(--line); }
   .feature { display: grid; grid-template-columns: 1fr 1.5fr; gap: clamp(28px, 5vw, 80px); align-items: center; padding: clamp(56px, 9vh, 110px) 0; border-top: 1px solid var(--line); }
@@ -89,7 +94,9 @@
       <a class="btn btn-gold" href="https://buy.stripe.com/eVq9ATa4j1cLbHl94kgMw04?prefilled_promo_code=LAUNCH"><span data-launch-price>Buy for life · $149</span> <span class="arrow"></span></a>
       <a class="btn btn-glass" href="/photo-studio/download/">Try it free for 7 days</a>
     </div>
-    <p class="price-note"><span data-launch-only>Launch price <strong>$149</strong> <s>$199</s></span><strong data-after-launch hidden>$199</strong> · one payment, no subscription · 2&nbsp;Macs · macOS&nbsp;14 or later</p>
+    <p class="film-link"><a href="#film" data-ga-location="hero">Watch the 23-second film</a></p>
+    <p class="price-note"><span data-launch-only>Launch price <strong>$149</strong> until Nov 30, 11:59 PM CT, then $199</span><strong data-after-launch hidden>$199</strong> · one payment, no subscription · 2&nbsp;Macs · macOS&nbsp;14 or later</p>
+    <div data-send-mac hidden></div>
   </section>
 
   <section class="wrap film reveal" id="film" aria-label="The Photo Studio film">
@@ -100,6 +107,10 @@
       </video>
     </div>
     <button class="play-row" type="button" data-video="filmVid"><span class="play-btn" aria-hidden="true"></span><span class="play-label">Watch the film · 0:23</span></button>
+    <div class="cta">
+      <a class="btn btn-gold" href="/photo-studio/download/" data-ga-location="under_film">Try it free for 7 days <span class="arrow"></span></a>
+      <a class="btn btn-glass" href="https://buy.stripe.com/eVq9ATa4j1cLbHl94kgMw04?prefilled_promo_code=LAUNCH" data-ga-location="under_film"><span data-launch-price>Buy for life · $149</span></a>
+    </div>
     <p class="film-page"><a href="/photo-studio/film/">Key moments and a link to share</a></p>
   </section>
 
@@ -203,7 +214,7 @@
           <li>7-day free trial before you buy</li>
         </ul>
         <a class="btn btn-gold" href="https://buy.stripe.com/eVq9ATa4j1cLbHl94kgMw04?prefilled_promo_code=LAUNCH"><span data-launch-price>Buy for life · $149</span> <span class="arrow"></span></a>
-        <p class="small">Secure checkout by Stripe. <span data-launch-only>The LAUNCH code is applied for you. </span>Your license key arrives by email from hello@magnificentmediaict.com within one business day.</p>
+        <p class="small">Secure checkout by Stripe. <span data-launch-only>Launch price $149 until Nov 30, 11:59 PM CT, then $199; the LAUNCH code is applied for you. </span>Your license key arrives by email from hello@magnificentmediaict.com within one business day.</p>
       </div>
     </div>
   </section>
@@ -263,5 +274,6 @@
   ad.addEventListener('ended', () => { filmFrame.classList.remove('playing'); ad.controls = false; setTimeout(() => ad.load(), 0); });
 </script>
 <script src="/assets/launch-end.js?v=3"></script>
+<script src="/assets/mac-only.js?v=1"></script>
 </body>
 </html>
